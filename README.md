@@ -13,3 +13,9 @@ print "oh dear"
 * bullets 
 * look like 
 * this 
+~~Yay strikethrough~~
+@jnnbgamble does a mention
+
+Lets try | and do | a table
+---------|--------|--------|
+will|this|work
