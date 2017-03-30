@@ -19,3 +19,6 @@ print "oh dear"
 Lets try | and do | a table
 ---------|--------|--------|
 will|this|work
+I | don't | know
+-----------------
+
