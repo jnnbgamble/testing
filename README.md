@@ -20,6 +20,6 @@ Lets try | and do | a table
 ---------|--------|--------|
 will|this|work
 I | don't | know
------------------
+-|-|---------------
 But somebody has to, surely | lah | lah | lah
 
