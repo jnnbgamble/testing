@@ -1,22 +1,29 @@
 # Chipotle Data Homework 
 
-First we have to import the file into python. 
+First we have to import the file into python. I have chipotle.tsv saved in a subdirectory called data.
 
 ```
 import pandas as pd
 path = 'data/chipotle.tsv'
 
-chipotle = pd.DataFrame.from_csv(path, sep='\t')
+chipotle = pd.read_csv(path, sep='\t')
 ```
 
 1. Look at the head and the tail of chipotle.tsv in the data subdirectory of this repo. Think for a minute about how the data is structured. What do you think each column means? What do you think each row means? Tell me! (If you're unsure, look at more of the file contents.)
 
 ```
+print chipotle.head()
 print chipotle.tail()
 ```
 
-1833	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Sour Cream, Cheese, Lettuce, Guacamole]]	$11.75 
-1833	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Sour Cream, Cheese, Lettuce, Guacamole]]	$11.75 
-1834	1	Chicken Salad Bowl	[Fresh Tomato Salsa, [Fajita Vegetables, Pinto Beans, Guacamole, Lettuce]]	$11.25 
-1834	1	Chicken Salad Bowl	[Fresh Tomato Salsa, [Fajita Vegetables, Lettuce]]	$8.75 
-1834	1	Chicken Salad Bowl	[Fresh Tomato Salsa, [Fajita Vegetables, Pinto Beans, Lettuce]]	$8.75 
+It looks like the file is a collection of Chipotle purchase data. Each column is another relevant piece of data to an order (an ID for the order, a quantity of items, the item's name, a discription of the item if applicable, and the item's price) and each row is a new order. Items with the same order ID appear to be separate items ordered by the same person. 
+
+2. How many orders do there appear to be?
+
+```
+print chipotle['order_id'].unique().size
+```
+
+There appear to be 1834 orders. 
+
+3. How many lines are in the file? 
