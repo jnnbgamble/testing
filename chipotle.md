@@ -52,6 +52,15 @@ These expressions show us that 282 chicken burritos had black beans and 105 had 
 
 **6 Make a list of all of the CSV or TSV files in the [our class repo] (https://github.com/ga-students/DS-SEA-3). repo (using a single command). You will be working on your local repo on your laptop. Think about how wildcard characters can help you with this task**
 
+'''
+find . -name *.csv
+find . -name *.tsv
+'''
+
+This command only works if you're currently in the class repository. 
+
 **7 Count the approximate number of occurrences of the word "dictionary" (regardless of case) across all files of [our class repo] (https://github.com/ga-students/DS-SEA-3)**
+
+grep...
 
 
