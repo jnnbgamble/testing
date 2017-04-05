@@ -27,3 +27,19 @@ print chipotle['order_id'].unique().size
 There appear to be 1834 orders. 
 
 3. How many lines are in the file? 
+
+```
+print chipotle.count() + 1
+```
+
+There are 4623 lines in the file. 4622 values in most columns +1 for the header. 
+
+4. Which burrito is more popular, steak or chicken?
+
+```
+print chipotle.item_name.value_counts()
+```
+
+The chicken burrito is more popular. 
+
+5. 
