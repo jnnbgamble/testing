@@ -29,7 +29,7 @@ There appear to be 1834 orders.
 **3 How many lines are in the file?** 
 
 ```
-print chipotle.count() + 1
+print chipotle.count() + 1 #because the indexing is 0 based
 ```
 
 There are 4623 lines in the file. 4622 values in most columns +1 for the header. 
@@ -42,4 +42,16 @@ print chipotle.item_name.value_counts()
 
 The chicken burrito is more popular. 
 
-5 
+**5 Do chicken burritos more often have black beans or pinto beans?**
+
+```
+print chipotle[(chipotle.item_name == 'Chicken Burrito') & (chipotle.choice_description.str.contains('Black Beans'))]
+print chipotle[(chipotle.item_name == 'Chicken Burrito') & (chipotle.choice_description.str.contains('Pinto Beans'))]
+```
+These expressions show us that 282 chicken burritos had black beans and 105 had pinto beans. Black beans happen more often. 
+
+**6 Make a list of all of the CSV or TSV files in the [our class repo] (https://github.com/ga-students/DS-SEA-3). repo (using a single command). You will be working on your local repo on your laptop. Think about how wildcard characters can help you with this task**
+
+**7 Count the approximate number of occurrences of the word "dictionary" (regardless of case) across all files of [our class repo] (https://github.com/ga-students/DS-SEA-3)**
+
+
