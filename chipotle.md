@@ -61,6 +61,9 @@ This command only works if you're currently in the class repository.
 
 **7 Count the approximate number of occurrences of the word "dictionary" (regardless of case) across all files of [our class repo] (https://github.com/ga-students/DS-SEA-3)**
 
-grep...
+```
+grep -roh "dictionary" . | wc -l
+```
+This returns 78 instances of the word "dictionary"
 
 
