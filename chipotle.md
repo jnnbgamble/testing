@@ -57,36 +57,36 @@ find . -name *.csv
 find . -name *.tsv
 ```
 CSVs: 
-./data/Airline_on_time_west_coast.csv
-./data/airlines.csv
-./data/bank-additional.csv
-./data/bikeshare.csv
-./data/citibike_feb2014.csv
-./data/drinks.csv
-./data/drones.csv
-./data/hitters.csv
-./data/icecream.csv
-./data/imdb_1000.csv
-./data/mtcars.csv
-./data/NBA_players_2015.csv
-./data/ozone.csv
-./data/pronto_cycle_share/2015_station_data.csv
-./data/pronto_cycle_share/2015_trip_data.csv
-./data/pronto_cycle_share/2015_weather_data.csv
-./data/rossmann.csv
-./data/rt_critics.csv
-./data/stores.csv
-./data/syria.csv
-./data/time_series_train.csv
-./data/titanic.csv
-./data/ufo.csv
-./data/vehicles_test.csv
-./data/vehicles_train.csv
-./data/yelp.csv
+*./data/Airline_on_time_west_coast.csv
+*./data/airlines.csv
+*./data/bank-additional.csv
+*./data/bikeshare.csv
+*./data/citibike_feb2014.csv
+*./data/drinks.csv
+*./data/drones.csv
+*./data/hitters.csv
+*./data/icecream.csv
+*./data/imdb_1000.csv
+*./data/mtcars.csv
+*./data/NBA_players_2015.csv
+*./data/ozone.csv
+*./data/pronto_cycle_share/2015_station_data.csv
+*./data/pronto_cycle_share/2015_trip_data.csv
+*./data/pronto_cycle_share/2015_weather_data.csv
+*./data/rossmann.csv
+*./data/rt_critics.csv
+*./data/stores.csv
+*./data/syria.csv
+*./data/time_series_train.csv
+*./data/titanic.csv
+*./data/ufo.csv
+*./data/vehicles_test.csv
+*./data/vehicles_train.csv
+*./data/yelp.csv
 
 TSVs:
-./data/chipotle.tsv
-./data/sms.tsv
+*./data/chipotle.tsv
+*./data/sms.tsv
 
 This command only works if you're currently in the class repository. 
 
