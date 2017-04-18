@@ -63,8 +63,33 @@ The coefficients do make sense. As mentioned earlier, it makes a lot of sense th
 
 **5 Valuate the model by splitting it into training and testing sets and computing the RMSE. Does the RMSE make intuitive sense to you?**
 
+```
+from sklearn.cross_validation import train_test_split
+import numpy as np
+
+def train_test_rmse(fc):
+    X = yelp[fc]
+    y = yelp.stars
+    X_train, X_test, y_train, y_test = train_test_split(X, y)
+    linreg2 = LinearRegression()
+    linreg2.fit(X_train, y_train)
+    y_pred = linreg2.predict(X_test)
+    return np.sqrt(metrics.mean_squared_error(y_test, y_pred))
+
+print train_test_rmse(['cool', 'useful', 'funny'])
+```
+
+Define a function that splits the original data into test and training chunks and returns the RMSE. As the data is randomly divided up, the RSME is never the exact same. But it remains around 1.15 - 1.22.
+
 **6 Try removing some of the features and see if the RMSE improves.**
 
-**7 BONUS: Think of some new features you could create from the existing data that might be predictive of the response. Figure out how to create those features in Pandas, add them to your model, and see if the RMSE improves.**
+```
+print train_test_rmse(['useful'])
+print train_test_rmse(['funny'])
+print train_test_rmse(['cool'])
+print train_test_rmse(['cool', 'useful'])
+print train_test_rmse(['cool', 'funny'])
+print train_test_rmse(['useful', 'funny'])
+```
 
-**8 BONUS: Compare your best RMSE on the testing set with the RMSE for the "null model", which is the model that ignores all features and simply predicts the mean response value in the testing set.**
+The RMSE is occasionally better with some of these reductions. 

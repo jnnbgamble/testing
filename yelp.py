@@ -1,9 +1,6 @@
 import pandas as pd 
 import matplotlib as plt
-from sklearn.linear_model import LinearRegression
-from sklearn.cross_validation import train_test_split
 from sklearn import metrics
-import numpy as np
 
 #Task 1: Read yelp.csv into a data frame
 
@@ -39,10 +36,32 @@ print linreg.coef_
 zip(feature_cols, linreg.coef_)
 
 
+#Task 5: Valuate the model by splitting it into training and testing sets and computing the RMSE. Does the RMSE make intuitive sense to you?
+
+from sklearn.cross_validation import train_test_split
+import numpy as np
+
+def train_test_rmse(fc):
+    X = yelp[fc]
+    y = yelp.stars
+    X_train, X_test, y_train, y_test = train_test_split(X, y)
+    linreg2 = LinearRegression()
+    linreg2.fit(X_train, y_train)
+    y_pred = linreg2.predict(X_test)
+    return np.sqrt(metrics.mean_squared_error(y_test, y_pred))
+
+print train_test_rmse(['cool', 'useful', 'funny'])
+
+#Task 6: Try removing some of the features and see if the RMSE improves
+
+print train_test_rmse(['useful'])
+print train_test_rmse(['funny'])
+print train_test_rmse(['cool'])
+print train_test_rmse(['cool', 'useful'])
+print train_test_rmse(['cool', 'funny'])
+print train_test_rmse(['useful', 'funny'])
 
 
-
-#linreg.fit(X['cool'], y)
 
 
 
