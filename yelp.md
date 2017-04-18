@@ -21,7 +21,7 @@ yelp = pd.read_csv(url, parse_dates=True)
 
 **5 Valuate the model by splitting it into training and testing sets and computing the RMSE. Does the RMSE make intuitive sense to you?**
 
-**6 Try removing some of the features and see if the RMSE improves. **
+**6 Try removing some of the features and see if the RMSE improves.**
 
 **7 BONUS: Think of some new features you could create from the existing data that might be predictive of the response. Figure out how to create those features in Pandas, add them to your model, and see if the RMSE improves.**
 
