@@ -1,10 +1,9 @@
 # Yelp Data Homework 
 
-First we have to import the file into python as well as all of our libraries. CSV is in the data subdirectory. 
+First we have to import the file into python as well as pandas. CSV is in the data subdirectory. 
 
 ```
 import pandas as pd
-import seaborn as sns
 path = './data/' 
 url = path + 'yelp.csv'
 ```
@@ -50,6 +49,17 @@ y = yelp.stars
 ```
 
 **4 Fit a linear regression model and interpret the coefficients. Do the coefficients make intuitive sense to you? Explore the Yelp website to see if you detect similar trends.**
+
+```
+from sklearn.linear_model import LinearRegression
+linreg = LinearRegression()
+linreg.fit(X, y)
+print linreg.intercept_
+print linreg.coef_
+zip(feature_cols, linreg.coef_)
+```
+
+The coefficients do make sense. As mentioned earlier, it makes a lot of sense that "useful" and "funny" categories would be inversely proportional to the number of stars given. 
 
 **5 Valuate the model by splitting it into training and testing sets and computing the RMSE. Does the RMSE make intuitive sense to you?**
 

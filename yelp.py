@@ -5,13 +5,13 @@ from sklearn.cross_validation import train_test_split
 from sklearn import metrics
 import numpy as np
 
-#Task 1
+#Task 1: Read yelp.csv into a data frame
 
 path = './data/' 
 url = path + 'yelp.csv'
 yelp = pd.read_csv(url, parse_dates=True) #index_col='stars'
 
-#Task 2
+#Task 2: Explore the relationship between each of the vote types (cool/useful/funny) and the number of stars
 
 print yelp.groupby('stars').mean()
 
@@ -23,33 +23,26 @@ sns.lmplot(x='cool', y='stars', data=yelp, aspect=0.5, scatter_kws={'alpha':0.2}
 sns.lmplot(x='useful', y='stars', data=yelp, aspect=0.5, scatter_kws={'alpha':0.2})
 sns.lmplot(x='funny', y='stars', data=yelp, aspect=0.5, scatter_kws={'alpha':0.2})
 
-#Task 3
+#Task 3: Define cool/useful/funny as the feature matrix X, and stars as the response vector y
 
 feature_cols = ['cool', 'useful', 'funny']
 X = yelp[feature_cols]
 y = yelp.stars
-print y
 
-#Treat as categorical variable, look for differences in groups
-#mean of cool/funny/useful for each star rating 
+#Task 4: Fit a linear regression model
 
-
-
-#Display correlation matrix of the vote types 
-#Display multiple scatter plots 
-
-
-
-#cool/funny/useful is feature matrix, stars is response vector y
+from sklearn.linear_model import LinearRegression
+linreg = LinearRegression()
+linreg.fit(X, y)
+print linreg.intercept_
+print linreg.coef_
+zip(feature_cols, linreg.coef_)
 
 
 
-#fit linear regression model and interpret coefficients 
+
+
+#linreg.fit(X['cool'], y)
 
 
 
-#Evaluate model by fitting RMSE
-
-
-
-#Remove features and see if RSME improves 
