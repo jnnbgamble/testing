@@ -19,9 +19,9 @@ import seaborn as sns
 sns.heatmap(yelp.corr())
 
 #yelp.plot(kind='scatter', x='cool', y='stars', alpha=0.2)
-sns.lmplot(x='stars', y='cool', data=yelp, aspect=0.5, scatter_kws={'alpha':0.2})
-sns.lmplot(x='stars', y='useful', data=yelp, aspect=0.5, scatter_kws={'alpha':0.2})
-sns.lmplot(x='stars', y='funny', data=yelp, aspect=0.5, scatter_kws={'alpha':0.2})
+sns.lmplot(x='cool', y='stars', data=yelp, aspect=0.5, scatter_kws={'alpha':0.2})
+sns.lmplot(x='useful', y='stars', data=yelp, aspect=0.5, scatter_kws={'alpha':0.2})
+sns.lmplot(x='funny', y='stars', data=yelp, aspect=0.5, scatter_kws={'alpha':0.2})
 
 #Task 3
 
